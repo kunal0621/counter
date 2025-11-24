@@ -1,38 +1,115 @@
+/* Make the whole app centered */
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background: #0f172a; /* dark background */
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
-.App-link {
-  color: #61dafb;
+/* Circular clock container */
+.clock {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #1f2937, #020617);
+  border: 4px solid #4b5563;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow:
+    0 0 20px rgba(15, 23, 42, 0.8),
+    inset 0 0 20px rgba(15, 23, 42, 0.8);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Inner content */
+.clock-inner {
+  text-align: center;
+  color: #e5e7eb;
+}
+
+/* Small label above time */
+.clock-label {
+  font-size: 12px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  color: #9ca3af;
+}
+
+/* Time display */
+.time {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 4px;
+  font-family: "Courier New", monospace; /* digital style */
+}
+
+.minutes,
+.seconds {
+  font-size: 42px;
+  font-weight: 700;
+}
+
+.separator {
+  font-size: 32px;
+  opacity: 0.7;
+  margin: 0 2px;
+}
+
+/* Buttons */
+.controls {
+  margin-top: 30px;
+  display: flex;
+  gap: 12px;
+}
+
+.btn {
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  transition: transform 0.1s ease, box-shadow 0.1s ease, background 0.2s ease;
+}
+
+/* Different colors per action */
+.start {
+  background: #22c55e;
+  color: #022c22;
+}
+
+.reset {
+  background: #f59e0b;
+  color: #451a03;
+}
+
+.pause {
+  background: #3b82f6;
+  color: #021431;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 12px rgba(15, 23, 42, 0.4);
+}
+
+.btn:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.timer-manager{
+  color: #e5e7eb;
+}
+
+.button-container{
+  display: flex;
+  gap: 12px;
 }
